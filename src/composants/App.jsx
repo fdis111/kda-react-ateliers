@@ -1,40 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from './Card';
-import Card2 from './Card2';
+import users from "../users"
+import Users from "./Users"
 
-//JSX
-const profile = {
-  photo:
-    'https://qph.fs.quoracdn.net/main-thumb-221356592-200-zyhrpkhlegkmkbjildezexzodkngkjec.jpeg',
-  noms: 'Christian Lisangola',
-  anneeInscription: 2019,
-  bio: 'Je suis amoureux des zombies',
-  nombreAmis: 566,
-};
-
-const profile2 = {
-  photo:
-    'https://pbs.twimg.com/profile_images/1097778598294028288/JfH7BFgX_400x400.jpg',
-  noms: 'Laurene Bitota',
-  anneeInscription: 1999,
-  bio: 'Je suis développeuse',
-  nombreAmis: 899,
-};
 
 function App() {
-  return (
-    <>
-      <Card
-        photo={profile.photo}
-        noms={profile.noms}
-        anneeInscription={profile.anneeInscription}
-        bio={profile.bio}
-        nombreAmis={profile.nombreAmis}
-      />
+  const [myUsers, setUsers] = useState(users)
+  const [name, setName] = useState("")
 
-      <Card {...profile2} />
-      <Card2 {...profile} />
-    </>
+  const handleChange = (evt) => {
+    setName(evt.target.value)
+    setUsers(users.filter(user => user.noms.toLowerCase().includes(evt.target.value.toLowerCase())))
+  }
+
+  return (
+    <div className="conataineur">
+      <input type="text" value={name} onChange={ handleChange } />
+      <Users users={myUsers}/>
+    </div>
   );
 }
 

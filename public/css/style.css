@@ -1,0 +1,15 @@
+.navigation
+{
+    background-color: rgb(127, 127, 214);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    /* height: 50px; */
+    align-items: center;
+}
+.conataineur
+{
+    width: 60%;
+    margin: auto;
+   
+}
