@@ -1,0 +1,38 @@
+.conataineur
+{
+    width: 70%;
+    margin: auto;  
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    height: 70PX;
+}
+.nav a
+{
+    color:  rgb(255, 255, 255);
+    padding: 20px;
+}
+.nav-container
+{
+    background: rgb(121, 121, 133);
+}
+h1
+{
+    font-size: 20PX;
+    text-align: center;
+}
+input {
+    width: 100%;
+    border: none;
+    height: 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+input:focus
+{
+    border: white;
+}
